@@ -1,0 +1,27 @@
+---
+
+- name: load system.base.json configuration
+  include_vars:
+    file: system.base.json
+    name: system_base
+
+- include: add_repository.yml
+  with_items: "{{ system_base.repositories }}"
+
+- name: apt-get update
+  apt:
+    update_cache: yes
+  when: system_base.update_cache
+
+- name: Install required packages
+  apt: state=installed name={{ item }}
+  with_items: "{{ system_base.packages.required }}"
+
+- name: Install extra packages
+  apt: state=installed name={{ item }}
+  with_items: "{{ system_base.packages.extra }}"
+ 
+- name: Install VS Code extensions
+  shell: code --install-extension {{ item }}
+  with_items: "{{ system_base.advanced.code.extensions }}"
+  when: "{{ system_base.advanced.code.enabled }}"

@@ -1,0 +1,70 @@
+{
+    "update_cache": false,
+    "repositories": [{
+        "name": "microsoft",
+        "config": "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main",
+        "key": "https://packages.microsoft.com/keys/microsoft.asc"
+    },
+    {
+        "name": "atom",
+        "config": "deb https://dl.bintray.com/alanfranz/atom-apt stable main",
+        "key": "https://www.franzoni.eu/keys/D401AB61.txt"
+    },
+    {
+        "name": "docker",
+        "config": "deb [arch=amd64] https://download.docker.com/linux/debian stretch stable",
+        "key": "https://download.docker.com/linux/debian/gpg"
+    },
+    {
+        "name": "debian-security",
+        "config": "deb http://security.debian.org/ stretch/updates main"
+    },
+    {
+        "name": "ansible",
+        "config": "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main",
+        "keyserver": "keyserver.ubuntu.com",
+        "keyid": "93C4A3FD7BB9C367"
+    }],
+    "packages": {
+        "required": [
+            "curl",
+            "apt-transport-https",
+            "ca-certificates",
+            "gnupg2",
+            "software-properties-common",
+            "dirmngr"
+        ],
+        "extra": [
+            "dconf-editor",
+            "bash-completion",
+            "terminator",
+            "nemo",
+            "neovim",
+            "geany",
+            "code",
+            "atom",
+            "firefox-esr",
+            "ansible",
+            "docker-ce",
+            "docker-compose",
+            "shutter",
+            "openjdk-8-jre",
+            "openjdk-8-jdk"
+        ]
+    },
+    "advanced": {
+        "code": {
+            "enabled": false,
+            "extensions":[
+                "akamud.vscode-theme-onelight",
+                "robertohuertasm.vscode-icons",
+                "ms-vscode.Theme-MarkdownKit",
+                "yzane.markdown-pdf"
+            ]
+        }
+    },
+    "default": {
+        "file_manager": "nemo",
+        "terminal": "terminator"
+    }
+}

@@ -1,0 +1,9 @@
+---
+- hosts: all
+  vars:
+  remote_user: root
+  roles:
+      # ALWAYS set env 
+      - { role: _setenv, tags: ['always']  }
+      # - { role: user, tags: ['always']  }
+      - { role: system.base, tags: ['always']  }
