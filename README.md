@@ -41,6 +41,13 @@ Edit json files.
 
 From https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R/eclipse-inst-linux64.tar.gz
 
+### Git configuration
+
+```
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+```
+
 ## Licence
 
 Apache License 2.0
